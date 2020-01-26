@@ -1,4 +1,4 @@
-package com.androidwind.quickaop.aspect;
+package com.androidwind.quickaop.library.aspect;
 
 import android.util.Log;
 
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class InsertLogAspect {
 
     private final String TAG = "InsertLogAspect";
-    private final String POINTCUT = "execution(@com.androidwind.quickaop.annotation.InsertLog * *(..))";
+    private final String POINTCUT = "execution(@com.androidwind.quickaop.library.annotation.InsertLog * *(..))";
     private long startTime, endTime;
     private String className;
     private String methodName;

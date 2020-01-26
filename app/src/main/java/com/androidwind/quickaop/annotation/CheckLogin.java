@@ -6,12 +6,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 带有统计耗时功能的log
+ * 检测是否登录
+ *
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
  */
 
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
-public @interface InsertLog {
+public @interface CheckLogin {
 }

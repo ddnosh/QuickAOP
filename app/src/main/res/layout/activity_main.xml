@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/ll_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -27,21 +28,83 @@
         </Button>
 
         <Button
-            android:id="@+id/singleClick"
+            android:id="@+id/singleClick1"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:onClick="singleClick"
-            android:text="防止快速点击">
+            android:onClick="singleClick1"
+            android:text="防止快速点击1">
 
         </Button>
 
         <Button
+            android:id="@+id/singleClick2"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:onClick="singleClick2"
+            android:text="防止快速点击2">
 
         </Button>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ll_1">
+
+        <Button
+            android:id="@+id/checkLogin"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="checkLogin"
+            android:text="登录态检测">
+
+        </Button>
+
+        <Button
+            android:id="@+id/requirePermission"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="requirePermission"
+            android:text="请求权限">
+
+        </Button>
+
+        <Button
+            android:id="@+id/eventTracking"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="eventTracking"
+            android:text="埋点">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ll_2">
+
+        <Button
+            android:id="@+id/asynchronize"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="asynchronize"
+            android:text="异步执行">
+
+        </Button>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
