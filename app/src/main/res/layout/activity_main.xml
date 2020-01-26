@@ -104,6 +104,16 @@
             android:text="异步执行">
 
         </Button>
+
+        <Button
+            android:id="@+id/catchException"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="catchException"
+            android:text="异常捕获">
+
+        </Button>
     </LinearLayout>
 
 

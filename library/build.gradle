@@ -38,5 +38,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //aspectjrt的依赖
-    implementation 'org.aspectj:aspectjrt:1.8.14'
+    api 'org.aspectj:aspectjrt:1.8.14'
+    //utils
+    api 'com.blankj:utilcode:1.23.7'
 }

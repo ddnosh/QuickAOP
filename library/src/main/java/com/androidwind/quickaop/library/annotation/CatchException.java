@@ -1,4 +1,4 @@
-package com.androidwind.quickaop.annotation;
+package com.androidwind.quickaop.library.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 进行异步处理
+ * 捕获异常
  *
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
-public @interface Asynchronize {
+public @interface CatchException {
 }

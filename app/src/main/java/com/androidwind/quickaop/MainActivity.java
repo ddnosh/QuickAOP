@@ -11,10 +11,11 @@ import android.widget.Toast;
 import com.androidwind.quickaop.annotation.Asynchronize;
 import com.androidwind.quickaop.annotation.EventTracking;
 import com.androidwind.quickaop.annotation.RequirePermission;
+import com.androidwind.quickaop.library.annotation.CatchException;
 import com.androidwind.quickaop.library.annotation.InsertLog;
 import com.androidwind.quickaop.annotation.CheckLogin;
 import com.androidwind.quickaop.library.annotation.SingleClick;
-import com.androidwind.quickaop.library.util.SPUtils;
+import com.blankj.utilcode.util.SPUtils;
 
 /**
  * @author ddnosh
@@ -69,5 +70,11 @@ public class MainActivity extends AppCompatActivity {
     @Asynchronize
     public void asynchronize(View view) {
         System.out.println("[Thread Name-asynchronize: ]" + Thread.currentThread().getName());
+    }
+
+    @CatchException
+    public void catchException(View view) {
+        String s = null;
+        s.toString();
     }
 }

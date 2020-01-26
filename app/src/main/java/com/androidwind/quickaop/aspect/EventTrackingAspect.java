@@ -1,11 +1,7 @@
 package com.androidwind.quickaop.aspect;
 
-import android.widget.Toast;
-
-import com.androidwind.quickaop.MyApplication;
 import com.androidwind.quickaop.annotation.EventTracking;
-import com.androidwind.quickaop.annotation.RequirePermission;
-import com.androidwind.quickaop.library.util.SPUtils;
+import com.blankj.utilcode.util.SPUtils;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
