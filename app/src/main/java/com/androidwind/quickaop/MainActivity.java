@@ -12,6 +12,7 @@ import com.androidwind.quickaop.annotation.Asynchronize;
 import com.androidwind.quickaop.annotation.EventTracking;
 import com.androidwind.quickaop.annotation.RequirePermission;
 import com.androidwind.quickaop.library.annotation.CatchException;
+import com.androidwind.quickaop.library.annotation.HookMethod;
 import com.androidwind.quickaop.library.annotation.InsertLog;
 import com.androidwind.quickaop.annotation.CheckLogin;
 import com.androidwind.quickaop.library.annotation.SingleClick;
@@ -76,5 +77,18 @@ public class MainActivity extends AppCompatActivity {
     public void catchException(View view) {
         String s = null;
         s.toString();
+    }
+
+    @HookMethod(beforeMethod = "beforeMethod", afterMethod = "afterMethod")
+    public void hookMethod(View view) {
+        Log.i(TAG, "this is a hookMethod");
+    }
+
+    private void beforeMethod() {
+        Log.i(TAG, "this is a before method");
+    }
+
+    private void afterMethod() {
+        Log.i(TAG, "this is an after method");
     }
 }

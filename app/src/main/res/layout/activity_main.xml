@@ -114,6 +114,16 @@
             android:text="异常捕获">
 
         </Button>
+
+        <Button
+            android:id="@+id/hookMethod"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="hookMethod"
+            android:text="Hook方法">
+
+        </Button>
     </LinearLayout>
 
 
