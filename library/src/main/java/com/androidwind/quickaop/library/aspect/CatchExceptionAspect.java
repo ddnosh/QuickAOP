@@ -2,10 +2,15 @@ package com.androidwind.quickaop.library.aspect;
 
 import android.util.Log;
 
+import com.blankj.utilcode.util.LogUtils;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * @author ddnosh
@@ -27,7 +32,13 @@ public class CatchExceptionAspect {
         try {
             joinPoint.proceed();
         } catch (Exception e) {
-            Log.i(TAG, e.getMessage() + "");
+            LogUtils.e(TAG, getException(e));
         }
+    }
+
+    private String getException(Throwable ex) {
+        StringWriter errors = new StringWriter();
+        ex.printStackTrace(new PrintWriter(errors));
+        return errors.toString();
     }
 }

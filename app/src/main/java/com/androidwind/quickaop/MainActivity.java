@@ -8,13 +8,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.androidwind.quickaop.annotation.AddToolbar;
 import com.androidwind.quickaop.annotation.Asynchronize;
+import com.androidwind.quickaop.library.annotation.Cache;
 import com.androidwind.quickaop.annotation.EventTracking;
 import com.androidwind.quickaop.annotation.RequirePermission;
 import com.androidwind.quickaop.library.annotation.CatchException;
 import com.androidwind.quickaop.library.annotation.HookMethod;
 import com.androidwind.quickaop.library.annotation.InsertLog;
 import com.androidwind.quickaop.annotation.CheckLogin;
+import com.androidwind.quickaop.library.annotation.NullCheck;
 import com.androidwind.quickaop.library.annotation.SingleClick;
 import com.blankj.utilcode.util.SPUtils;
 
@@ -22,6 +25,7 @@ import com.blankj.utilcode.util.SPUtils;
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
  */
+@AddToolbar
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "[addToolbar]" + "MainActivity->onCreate");
         System.out.println("[Thread Name-MainActivity: ]" + Thread.currentThread().getName());
     }
 
@@ -90,5 +95,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void afterMethod() {
         Log.i(TAG, "this is an after method");
+    }
+
+    @Cache(key = "name")
+    public String cache(View view) {
+        return "Jerry";
+    }
+
+    public void nullCheck(View view) {
+        getString("Tommy", null);
+    }
+
+    @NullCheck(position = 1)
+    private void getString(String name, String country) {
+        Log.i(TAG, "this is after nullcheck input");
+    }
+
+    public void toast(View view) {
+        Toast.makeText(this,"原始的toast",Toast.LENGTH_SHORT).show();
     }
 }

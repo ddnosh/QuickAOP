@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        android:text="toolbar">
+
+    </TextView>
+
     <LinearLayout
         android:id="@+id/ll_1"
         android:layout_width="match_parent"
@@ -15,7 +29,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <Button
             android:id="@+id/insertLog"
@@ -122,6 +136,45 @@
             android:layout_weight="1"
             android:onClick="hookMethod"
             android:text="Hook方法">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ll_3">
+
+        <Button
+            android:id="@+id/cache"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="cache"
+            android:text="缓存">
+
+        </Button>
+
+        <Button
+            android:id="@+id/nullCheck"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="nullCheck"
+            android:text="null检查">
+
+        </Button>
+
+        <Button
+            android:id="@+id/toast"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="toast"
+            android:text="拦截toast">
 
         </Button>
     </LinearLayout>
