@@ -1,4 +1,4 @@
-package com.androidwind.quickaop.annotation;
+package com.androidwind.quickaop.library.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

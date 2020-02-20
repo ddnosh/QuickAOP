@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 添加toolbar
+ * 添加view
  *
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
-public @interface AddToolbar {
+public @interface AddView {
 }

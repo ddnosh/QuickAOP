@@ -8,10 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.androidwind.quickaop.annotation.AddToolbar;
+import com.androidwind.quickaop.annotation.AddView;
 import com.androidwind.quickaop.annotation.Asynchronize;
 import com.androidwind.quickaop.library.annotation.Cache;
-import com.androidwind.quickaop.annotation.EventTracking;
+import com.androidwind.quickaop.library.annotation.EventTracking;
 import com.androidwind.quickaop.annotation.RequirePermission;
 import com.androidwind.quickaop.library.annotation.CatchException;
 import com.androidwind.quickaop.library.annotation.HookMethod;
@@ -25,7 +25,7 @@ import com.blankj.utilcode.util.SPUtils;
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
  */
-@AddToolbar
+@AddView
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "[addToolbar]" + "MainActivity->onCreate");
+        Log.d(TAG, "[addView]" + "MainActivity->onCreate");
         System.out.println("[Thread Name-MainActivity: ]" + Thread.currentThread().getName());
     }
 

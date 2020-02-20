@@ -28,19 +28,20 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 @Aspect
-public class AddToolbarAspect {
+public class AddViewAspect {
 
-    private final String TAG = "AddToolbarAspect";
+    private final String TAG = "AddViewAspect";
+    private final String POINTCUT = "execution(* android.app.Activity.onCreate(..)) && within(@com.androidwind.quickaop.annotation.AddView *)";
 
-    @After("execution(* android.app.Activity.onCreate(..)) && within(@com.androidwind.quickaop.annotation.AddToolbar *)")
-    public void addToolbar(JoinPoint joinPoint) throws Throwable {
+    @After(POINTCUT)
+    public void addView(JoinPoint joinPoint) throws Throwable {
         FragmentActivity activity = null;
         String signatureStr = joinPoint.getSignature().toString();
-        Log.d(TAG, "[addToolbar]" + signatureStr);
+        Log.d(TAG, "[addView]" + signatureStr);
         final Object object = joinPoint.getThis();
         if (object instanceof FragmentActivity) {
             activity = (FragmentActivity) object;
-            TextView tv = activity.findViewById(R.id.toolbar);
+            TextView tv = activity.findViewById(R.id.view);
             tv.setVisibility(View.VISIBLE);
         }
     }

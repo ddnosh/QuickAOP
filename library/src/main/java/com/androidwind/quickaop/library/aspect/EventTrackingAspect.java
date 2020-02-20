@@ -1,6 +1,6 @@
-package com.androidwind.quickaop.aspect;
+package com.androidwind.quickaop.library.aspect;
 
-import com.androidwind.quickaop.annotation.EventTracking;
+import com.androidwind.quickaop.library.annotation.EventTracking;
 import com.blankj.utilcode.util.SPUtils;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -17,7 +17,7 @@ import org.aspectj.lang.annotation.Pointcut;
 public class EventTrackingAspect {
 
     private final String TAG = "EventTrackingAspect";
-    private final String POINTCUT = "execution(@com.androidwind.quickaop.annotation.EventTracking * *(..))";
+    private final String POINTCUT = "execution(@com.androidwind.quickaop.library.annotation.EventTracking * *(..))";
 
     @Pointcut(POINTCUT)
     public void onEventTrackingMethod() {
